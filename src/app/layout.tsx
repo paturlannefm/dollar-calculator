@@ -2,9 +2,9 @@ import React from "react";
 
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Mono } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} `}>
+      <body className={`${spaceMono.className} `}>
         <main className="bg-cyan-100 h-screen flex items-center justify-center">
-          <div className="max-w-screen-lg m-auto flex-1 max-h-96 h-full px-4">
-            <div className="bg-white rounded-3xl shadow-lg w-full h-full p-10">
+          <div className="mx-auto flex max-w-screen-md flex-1 flex-col px-4">
+            <div className="grid w-full flex-1 rounded-3xl bg-white p-8 shadow-lg">
               {children}
             </div>
           </div>

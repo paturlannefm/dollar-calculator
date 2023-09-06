@@ -14,14 +14,14 @@ export default function Home() {
   const [amount, setAmount] = useState(0);
 
   return (
-    <main className="flex gap-4 h-full ">
-      <section className="flex-1">
+    <main className="grid gap-8 ">
+      <section>
         <Form
           value={amount}
           onChange={(_amount: number) => setAmount(_amount)}
         />
       </section>
-      <section className="flex-1 bg-cyan-800 rounded-3xl p-10 text-white overflox-y-auto">
+      <section className="flex-1 bg-cyan-800 rounded-3xl p-10 text-white">
         <ul className="flex flex-col gap-4">
           {Object.entries(COTIZACIONES).map(
             ([name, value]: [string, { compra: number; venta: number }]) => {
