@@ -4,6 +4,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
 
+import Footer from "./components/Footer";
+
 const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
@@ -26,6 +28,7 @@ export default function RootLayout({
             </div>
           </div>
         </main>
+        <Footer />
       </body>
     </html>
   );
