@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} `}>
         <main className="bg-cyan-100 h-screen flex items-center justify-center">
-          <div className="max-w-screen-md m-auto flex-1 max-h-96 h-full">
+          <div className="max-w-screen-lg m-auto flex-1 max-h-96 h-full px-4">
             <div className="bg-white rounded-3xl shadow-lg w-full h-full p-10">
               {children}
             </div>
