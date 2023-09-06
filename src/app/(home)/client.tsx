@@ -2,9 +2,9 @@
 import React from "react";
 import { useState } from "react";
 
-import type { Cotizacion } from "./types";
+import type { Cotizacion } from "../types";
 
-import Form from "./components/Form";
+import Form from "../components/Form";
 
 export default function HomeClient({
   cotizaciones,
