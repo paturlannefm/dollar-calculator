@@ -5,6 +5,8 @@ import { useState } from "react";
 import type { Cotizacion } from "../types";
 
 import Form from "../components/Form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChartColumn } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomeClient({
   cotizaciones,
@@ -31,7 +33,7 @@ export default function HomeClient({
                 key={nombre}
                 className="flex items-center justify-between gap-4"
               >
-                <div className="text-emerald-100">{nombre}</div>
+                <div className="text-cyan-100">{nombre}</div>
                 <div className="flex items-center gap-4">
                   {amount ? (
                     <div className="text-xl font-bold text-cyan-500">
@@ -47,6 +49,12 @@ export default function HomeClient({
                       currency: "ARS",
                     })}
                   </div>
+                  <button
+                    onClick={() => console.log("show analisis chart")}
+                    className="text-cyan-100 self-end text-2xl cursor-pointer hover:text-cyan-300 transition-colors ease-in-out duration-150"
+                  >
+                    <FontAwesomeIcon icon={faChartColumn} />
+                  </button>
                 </div>
               </li>
             );
