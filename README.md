@@ -59,6 +59,7 @@ Feel free to explore the demo to see the Dollar Calculator in action! If you hav
 - **Typescript** - Superset of JavaScript which primarily provides optional static typing, classes and interfaces.
 - **Tailwind** - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 - **ESLint** - The pluggable linting utility.
+- **Charts.js** - A powerful charting library used to create historical data charts.
 - Clean and beautiful **responsive** design.
 
 ## Contact
