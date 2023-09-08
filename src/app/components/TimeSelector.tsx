@@ -6,38 +6,27 @@ interface TimeSelectorProps {
 }
 
 function TimeSelector({ selectedTime, handleTimeChange }: TimeSelectorProps) {
+  const timeOptions = [
+    { label: "Semanal", value: "semanal" },
+    { label: "Mensual", value: "mensual" },
+    { label: "Anual", value: "anual" },
+  ];
+
   return (
     <div className="flex justify-center mt-4 gap-4">
-      <button
-        onClick={() => handleTimeChange("semanal")}
-        className={`time-selector ${
-          selectedTime === "semanal"
-            ? "border-gray-600 text-gray-800"
-            : "border-gray-300"
-        }`}
-      >
-        Semanal
-      </button>
-      <button
-        onClick={() => handleTimeChange("mensual")}
-        className={`time-selector ${
-          selectedTime === "mensual"
-            ? "border-gray-600 text-gray-800"
-            : "border-gray-300"
-        }`}
-      >
-        Mensual
-      </button>
-      <button
-        onClick={() => handleTimeChange("anual")}
-        className={`time-selector ${
-          selectedTime === "anual"
-            ? "border-gray-600 text-gray-800"
-            : "border-gray-300"
-        }`}
-      >
-        Anual
-      </button>
+      {timeOptions.map((option) => (
+        <button
+          key={option.value}
+          onClick={() => handleTimeChange(option.value)}
+          className={`time-selector ${
+            selectedTime === option.value
+              ? "border-gray-600 text-gray-800"
+              : "border-gray-300"
+          }`}
+        >
+          {option.label}
+        </button>
+      ))}
     </div>
   );
 }
