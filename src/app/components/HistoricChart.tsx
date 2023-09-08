@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import LineChart from "./LineChart";
 
 //actions
-import { getOfficialDollarValues } from "../actions/getOfficialDollarValues";
+import { getDollarValuesByType } from "../actions/getDollarValuesByType";
 
 interface DataItem {
   0: string;
@@ -13,20 +13,36 @@ interface DataItem {
 
 interface Props {
   handleClose: () => void;
+  dollarType: string;
 }
 
-const HistoricChart = ({ handleClose }: Props) => {
+const HistoricChart = ({ handleClose, dollarType }: Props) => {
   const [chartData, setChartData] = useState<DataItem[]>([]);
+  const [chartTitle, setChartTitle] = useState<string>("");
 
   const getChartData = async () => {
-    const newData = await getOfficialDollarValues();
+    const newData = await getDollarValuesByType(dollarType);
     setChartData(newData);
   };
 
   useEffect(() => {
-    getChartData();
-  }, []);
+    switch (dollarType) {
+      case "Dolar Oficial":
+        setChartTitle("Precio histórico del dólar Oficial");
+        break;
+      case "Dolar Blue":
+        setChartTitle("Precio histórico del dólar Blue");
+        break;
+      case "Dolar Bolsa":
+        setChartTitle("Precio histórico del dólar Bolsa");
+        break;
+      default:
+        setChartTitle("Precio histórico del dólar");
+        break;
+    }
 
+    getChartData();
+  }, [dollarType]);
   return (
     <section className="relative flex flex-col">
       <button
@@ -36,9 +52,7 @@ const HistoricChart = ({ handleClose }: Props) => {
         <span className="h-6 w-6 outline-none focus:outline-none">×</span>
       </button>
       <div className="flex justify-center">
-        <h1 className="font-bold text-xl text-cyan-800">
-          Precio histórico del dólar oficial
-        </h1>
+        <h1 className="font-bold text-xl text-cyan-800">{chartTitle}</h1>
       </div>
 
       <LineChart data={chartData} />

@@ -16,6 +16,12 @@ export default function HomeClient({
 }) {
   const [amount, setAmount] = useState(0);
   const [showHistoricChart, setShowHistoricChart] = useState<boolean>(false);
+  const [dollarType, setDollarType] = useState<string>("");
+
+  const handleClickAnalisisButton = (nombre: string) => {
+    setDollarType(nombre);
+    setShowHistoricChart(true);
+  };
 
   return (
     <main>
@@ -54,7 +60,7 @@ export default function HomeClient({
                         })}
                       </div>
                       <button
-                        onClick={() => setShowHistoricChart(!showHistoricChart)}
+                        onClick={() => handleClickAnalisisButton(nombre)}
                         className="text-cyan-100 self-end text-2xl cursor-pointer hover:text-cyan-300 transition-colors ease-in-out duration-150"
                       >
                         <FontAwesomeIcon icon={faChartColumn} />
@@ -67,7 +73,10 @@ export default function HomeClient({
           </section>
         </div>
       ) : (
-        <HistoricChart handleClose={() => setShowHistoricChart(false)} />
+        <HistoricChart
+          handleClose={() => setShowHistoricChart(false)}
+          dollarType={dollarType}
+        />
       )}
     </main>
   );
