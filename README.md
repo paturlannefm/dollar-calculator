@@ -13,7 +13,8 @@
   <a href="#contact">Contact</a> •
 </p>
 
-![screenshot](https://i.ibb.co/7psG2j4/dollarcalculator.jpg)
+![screenshot](https://i.ibb.co/GxHY9DH/dollar1.jpg)
+![screenshot](https://i.ibb.co/qgDF7hv/dollar2.jpg)
 
 ## How To use
 
@@ -39,21 +40,26 @@ You can check out the live demo of the Dollar Calculator web application [here](
 
 The demo showcases the following features:
 
-- Real-time currency conversion using the DolarSi API.
+- Real-time currency conversion using the DolarSi API
 - Responsive design that works seamlessly on both desktop and mobile devices.
 - Interactive user interface for entering and converting currency values.
 - Easy-to-use and intuitive navigation.
+
+Additionally, we've added the following new feature:
+
+- **Historical Price Charts**: Now you can view historical price charts for each type of dollar (blue, bolsa, and official). Explore the historical trends and analyze the data.
 
 Feel free to explore the demo to see the Dollar Calculator in action! If you have any questions or feedback, don't hesitate to reach out.
 
 ## Features 🦸
 
+- **Real-time Currency Data** - Utilizes the [DolarSi API](https://www.dolarsi.com/api/api.php?type=valoresprincipales) to fetch real-time currency values for the blue, official, and stock market exchange rates.
+- **Historical Price Charts** - View historical price charts for each type of dollar (blue, bolsa, and official) using the [Ambito Mercado API](https://mercados.ambito.com/dolar/). Explore the historical trends and analyze the data.
 - **NextJs** - Next.js enables you to create full-stack Web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds.
 - **Typescript** - Superset of JavaScript which primarily provides optional static typing, classes and interfaces.
 - **Tailwind** - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 - **ESLint** - The pluggable linting utility.
 - Clean and beautiful **responsive** design.
-- **Real-time Currency Data** - Utilizes the [DolarSi API](https://www.dolarsi.com/api/api.php?type=valoresprincipales) to fetch real-time currency values for the blue, official, and stock market exchange rates.
 
 ## Contact
 
