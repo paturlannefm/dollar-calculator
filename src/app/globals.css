@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .time-selector {
+    @apply text-gray-500 border-b ease-in-out duration-150 transition-colors hover:text-gray-800;
+  }
+}

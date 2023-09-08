@@ -7,7 +7,7 @@ import type { Cotizacion } from "../types";
 import Form from "../components/Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartColumn } from "@fortawesome/free-solid-svg-icons";
-import HistoricChart from "../components/HistoricChart";
+import HistoricAnalisis from "../components/HistoricAnalisis";
 
 export default function HomeClient({
   cotizaciones,
@@ -73,7 +73,7 @@ export default function HomeClient({
           </section>
         </div>
       ) : (
-        <HistoricChart
+        <HistoricAnalisis
           handleClose={() => setShowHistoricChart(false)}
           dollarType={dollarType}
         />

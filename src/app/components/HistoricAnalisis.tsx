@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 import LineChart from "./LineChart";
+import TimeSelector from "./TimeSelector";
 
 //actions
 import { getDollarValuesByType } from "../actions/getDollarValuesByType";
@@ -16,13 +17,18 @@ interface Props {
   dollarType: string;
 }
 
-const HistoricChart = ({ handleClose, dollarType }: Props) => {
+const HistoricAnalisis = ({ handleClose, dollarType }: Props) => {
   const [chartData, setChartData] = useState<DataItem[]>([]);
   const [chartTitle, setChartTitle] = useState<string>("");
+  const [selectedTime, setSelectedTime] = useState("semanal");
 
   const getChartData = async () => {
-    const newData = await getDollarValuesByType(dollarType);
+    const newData = await getDollarValuesByType(dollarType, selectedTime);
     setChartData(newData);
+  };
+
+  const handleTimeChange = (time: string) => {
+    setSelectedTime(time);
   };
 
   useEffect(() => {
@@ -40,9 +46,9 @@ const HistoricChart = ({ handleClose, dollarType }: Props) => {
         setChartTitle("Precio histórico del dólar");
         break;
     }
-
     getChartData();
-  }, [dollarType]);
+  }, [selectedTime]);
+
   return (
     <section className="relative flex flex-col">
       <button
@@ -55,8 +61,13 @@ const HistoricChart = ({ handleClose, dollarType }: Props) => {
         <h1 className="font-bold text-xl text-cyan-800">{chartTitle}</h1>
       </div>
 
+      <TimeSelector
+        selectedTime={selectedTime}
+        handleTimeChange={handleTimeChange}
+      />
+
       <LineChart data={chartData} />
     </section>
   );
 };
-export default HistoricChart;
+export default HistoricAnalisis;
